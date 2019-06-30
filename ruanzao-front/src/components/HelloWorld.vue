@@ -81,6 +81,8 @@
       </li>
     </ul>
   </div>
+  <!--<div class="icontent"> <div class="alert alert-primary" role="alert"> This is a primary alert—check it out! </div> </div>-->
+
 </template>
 
 <script>

@@ -1,0 +1,21 @@
+#初始化项目
+vue init webpack vuestrap
+cd vuestrap
+npm i
+cnpm i jquery --save-dev
+cnpm install --save bootstrap
+cnpm install --save popper.js  // bootstrap min.js依赖的插件
+加入webpack对象,修改webpcak.conf.js
+//在顶部添加
+const webpack = require('webpack')
+在module.exports里面加入
+plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "windows.jQuery": "jquery"
+    })
+  ]
+引入，main.js中
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
