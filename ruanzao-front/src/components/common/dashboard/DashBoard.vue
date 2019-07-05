@@ -11,13 +11,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
+              <!--<router-link :to="'/home'">-->
+                <!--<span class="sr-only">首页</span>-->
+              <!--</router-link>-->
+              <a class="nav-link" href="/home">首页 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">软枣子品种</a>
+              <a class="nav-link" href="/fruit">软枣子品种</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/sapling" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 软枣子树苗
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -28,7 +31,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">联系我们</a>
+              <a class="nav-link <!--disabled-->" href="/contact">联系我们</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">

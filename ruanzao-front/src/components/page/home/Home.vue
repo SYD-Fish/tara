@@ -1,14 +1,14 @@
 <template>
   <div>
     <user-header></user-header>
-    <user-dashboard></user-dashboard>
+    <dash-board></dash-board>
     <div>This is a home page</div>
     <user-footer></user-footer>
   </div>
 </template>
 
 <script>
-    import UserDashboard from "../../common/dashboard/UserDashboard";
+    import DashBoard from "../../common/dashboard/DashBoard";
     import UserFooter from "../../common/footer/UserFooter";
     import UserHeader from "../../common/header/UserHeader";
     export default {
@@ -16,7 +16,7 @@
         components: {
           UserHeader,
           UserFooter,
-          UserDashboard
+          DashBoard
         }
     }
 </script>
