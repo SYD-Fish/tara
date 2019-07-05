@@ -19,3 +19,10 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+1、搭建ruanzao-front 项目
+2、确定基本组件
+3、调查研究vue-router
+
+
+
