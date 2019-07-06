@@ -1,9 +1,9 @@
 <template>
   <div>
-    <user-header></user-header>
-    <dash-board></dash-board>
+    <!--<user-header></user-header>-->
+    <!--<dash-board></dash-board>-->
     <div>This is a home page</div>
-    <user-footer></user-footer>
+    <!--<user-footer></user-footer>-->
   </div>
 </template>
 

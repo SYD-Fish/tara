@@ -1,0 +1,11 @@
+使用proxyTable 解决vue-resource 跨域请求问题
+1、config文件下面的index.js文件 添加proxyTable的配置参数
+proxyTable: {
+      '/api' :{                                       //代理的地址
+        target: 'http://localhost:8888',              //目标真实地址
+        changeOrigin: true,
+        pathRewrite:{                                  //可以不写
+                    '^/api':'/api'
+                }
+      }
+    }

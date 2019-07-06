@@ -1,13 +1,26 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
+    <user-header></user-header>
+    <dash-board></dash-board>
     <router-view></router-view>
+    <user-footer></user-footer>
+    <!--<img src="./assets/logo.png">-->
+
   </div>
 </template>
 
 <script>
+import UserHeader from "./components/common/header/UserHeader";
+import UserFooter from "./components/common/footer/UserFooter";
+import DashBoard from "./components/common/dashboard/DashBoard";
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    UserHeader,
+    UserFooter,
+    DashBoard
+  }
 }
 </script>
 

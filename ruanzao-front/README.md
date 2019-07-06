@@ -23,6 +23,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 1、搭建ruanzao-front 项目
 2、确定基本组件
 3、调查研究vue-router
+4、http 本地node 代理 /design/nodeProxy
 
 
 

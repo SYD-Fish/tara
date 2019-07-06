@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
  * Author: syd-fish
  */
 @RestController
-@RequestMapping("/api/user")
-public class UserController {
+@RequestMapping("/api/admin")
+public class AdminController {
 
-    @PostMapping("/admin/login")
+    @PostMapping("/login")
     public boolean login() {
 
         return false;
     }
 
-    @PostMapping("/admin/logout")
+    @PostMapping("/logout")
     public boolean logout() {
         return true;
     }

@@ -3,11 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
-import jquery from 'jquery'
+import VueResource from 'vue-resource'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
 
 Vue.config.productionTip = false
+Vue.prototype.rootUrl = '/api'
+Vue.use(VueResource)
+
 
 /* eslint-disable no-new */
 new Vue({
