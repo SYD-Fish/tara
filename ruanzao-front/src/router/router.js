@@ -5,6 +5,7 @@ import App from "../App";
 import Fruit from "../components/page/fruit/Fruit";
 import Sapling from "../components/page/sapling/Sapling";
 import Contact from "../components/page/contact/Contact";
+import ErrorPage from "../components/page/error/ErrorPage";
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,8 @@ const routes = [
   {path: '/home', name: 'home', component: Home},
   {path: '/fruit', component: Fruit},
   {path: '/sapling', component: Sapling},
-  {path: '/contact', component: Contact}
+  {path: '/contact', component: Contact},
+  {path: '/error', component: ErrorPage}
 ]
 
 const router = new VueRouter ({

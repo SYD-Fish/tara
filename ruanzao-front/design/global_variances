@@ -1,0 +1,5 @@
+1、定义js/global_variable.js文件
+2、在里面暴露变量
+3、在main.js 引用js 文件
+  import global_variable from './js/global_variable'
+  Vue.prototype.global_variable = global_variable

@@ -3,13 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
-import VueResource from 'vue-resource'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
+import global_variable from './js/global_variable'
+import axios from 'axios'
+import qs from 'qs'
 
-Vue.config.productionTip = false
+Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
+Vue.prototype.qs = qs           //全局注册，使用方法为:this.qs
 Vue.prototype.rootUrl = '/api'
-Vue.use(VueResource)
+Vue.prototype.global_variable = global_variable
 
 
 /* eslint-disable no-new */

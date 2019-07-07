@@ -20,7 +20,7 @@ export default {
     UserHeader,
     UserFooter,
     DashBoard
-  }
+  },
 }
 </script>
 

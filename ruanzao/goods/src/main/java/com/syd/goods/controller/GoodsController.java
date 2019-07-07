@@ -20,7 +20,8 @@ import java.util.List;
 public class GoodsController {
 
     @GetMapping("/getAllGoods")
-    public List<GoodsModel> getGoods() {
+    public List<GoodsModel> getGoods(String adminId) {
+        System.out.println(adminId);
         List<GoodsModel> goodsList = new ArrayList<>();
         GoodsModel goodsModel = new GoodsModel();
         goodsModel.setGoodsKind("大果");

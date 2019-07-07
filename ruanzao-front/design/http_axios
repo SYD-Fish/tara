@@ -1,0 +1,27 @@
+1、vue 调用axios插件   github地址：https://github.com/axios/axios
+    安装插件： npm install axios
+    main.js引用axios：
+          import axios from 'axios'
+          import qs from 'qs'             //qs 可以对url进行序列化
+          Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
+          Vue.prototype.qs = qs           //全局注册，使用方法为:this.qs
+
+2、axios 异步请求后渲染
+     添加this.$nextTick 方法
+     data(){
+         return{
+           goodsKind: ''
+         }
+
+       }
+
+     this.$axios.get('url')
+         .then(response => {
+           var data = response;
+           this.$nextTick(() => {
+                           this.goodsKind = data
+                         })
+         })
+         .catch(error => {
+           this.$router.push('error')
+         })
