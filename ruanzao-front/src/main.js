@@ -9,10 +9,10 @@ import global_variable from './js/global_variable'
 import axios from 'axios'
 import qs from 'qs'
 
-Vue.prototype.$axios = axios    //全局注册，使用方法为:this.$axios
-Vue.prototype.qs = qs           //全局注册，使用方法为:this.qs
-Vue.prototype.rootUrl = '/api'
-Vue.prototype.global_variable = global_variable
+Vue.prototype.$axios = axios;   //全局注册，使用方法为:this.$axios
+Vue.prototype.qs = qs;           //全局注册，使用方法为:this.qs
+Vue.prototype.rootUrl = '/api';
+Vue.prototype.global_variable = global_variable;
 
 
 /* eslint-disable no-new */

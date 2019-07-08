@@ -20,13 +20,6 @@
           DashBoard
         },
         created() {
-          this.$axios.post(this.rootUrl + '/system/getAdmin', {
-            url: 'localhost'
-          }).then( response => {
-            console.log(response);
-            global_variable.setAdminId(response.data.adminId);
-          })
-            .catch(error => this.$router.push('error'))
         }
     }
 </script>

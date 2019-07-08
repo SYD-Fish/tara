@@ -1,6 +1,6 @@
 <template>
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: green">
+      <nav class="navbar navbar-expand-lg navbar-light"> <!--style="background-color: green"-->
         <!-- Navbar content -->
         <!--首页 | 软枣子品种 | 软枣子树苗 | 联系我们-->
         <!--<a class="navbar-brand" href="#">Navbar</a>-->
@@ -17,14 +17,27 @@
               <!--<a class="nav-link" href="/home">首页 <span class="sr-only">(current)</span></a>-->
 
             </li>
-            <li class="nav-item">
-              <router-link to="fruit" tag="span" class="nav-link">
-                软枣子品种
-              </router-link>
+            <li class="nav-item dropdown">
+              <!--<router-link to="fruit" tag="span" class="nav-link">-->
+                <!--软枣子品种-->
+              <!--</router-link>-->
+              <div class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                软枣子
+              </div>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div v-for="goodsKind in goodsKinds" class="dropdown-item">
+                  <span @click="linkToFruit(goodsKind.goodsKindId)">{{ goodsKind.goodsKindName }}</span>
+                  <!--<span>{{ goodsKind.goodsKindName }}</span>-->
+                </div>
+                <!--<a class="dropdown-item" href="#">Action</a>-->
+                <!--<a class="dropdown-item" href="#">Another action</a>-->
+                <!--<div class="dropdown-divider"></div>-->
+                <!--<a class="dropdown-item" href="#">Something else here</a>-->
+              </div>
               <!--<a class="nav-link" href="/fruit"></a>-->
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/sapling" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 软枣子树苗
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,8 +64,35 @@
 </template>
 
 <script>
+    import global_variable from "../../../js/global_variable";
+
     export default {
-        name: "UserDashboard"
+      name: "UserDashboard",
+      data: function(){
+        goodsKinds:[]
+      },
+      created() {
+        this.$axios.get(this.rootUrl + '/system/getAdminId/' + window.location.href.split('/')[2])
+          .then( response => {
+          console.log(response);
+          global_variable.setAdminId(response.data);
+          this.$axios.get(this.rootUrl + '/goods/getAllFruitKind/' + global_variable.adminId)
+            .then(response =>{
+              console.log(response.data);
+              this.goodsKinds =response.data;
+            })
+            .catch(error =>{
+              this.$router.push('error')
+            })
+        })
+          .catch(error => this.$router.push('error'))
+      },
+      methods: {
+        linkToFruit:function (goodsKindId) {
+          console.log(goodsKindId + 'aa');
+          // router.push('fruit/'+goodsKindId);
+        }
+      }
     }
 </script>
 

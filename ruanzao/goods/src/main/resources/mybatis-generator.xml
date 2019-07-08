@@ -43,12 +43,13 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类-->
-        <table tableName="admin" domainObjectName="AdminModel" mapperName="AdminMapper"/>
-        <table tableName="contact" domainObjectName="ContactModel" mapperName="ContactMapper"/>
-        <table tableName="enterprise_video" domainObjectName="EnterpriseVideoModel" mapperName="EnterpriseVideoMapper"/>
-        <table tableName="goods" domainObjectName="GoodsModel" mapperName="GoodsMapper"/>
-        <table tableName="goods_order" domainObjectName="GoodsOrderModel" mapperName="GoodsOrderMapper"/>
-        <table tableName="news" domainObjectName="NewsModel" mapperName="NewsMapper"/>
+        <!--<table tableName="admin" domainObjectName="AdminModel" mapperName="AdminMapper"/>-->
+        <!--<table tableName="contact" domainObjectName="ContactModel" mapperName="ContactMapper"/>-->
+        <!--<table tableName="enterprise_video" domainObjectName="EnterpriseVideoModel" mapperName="EnterpriseVideoMapper"/>-->
+        <!--<table tableName="goods" domainObjectName="GoodsModel" mapperName="GoodsMapper"/>-->
+        <table tableName="goods_kind" domainObjectName="GoodsKindModel" mapperName="GoodsKindMapper"/>
+        <!--<table tableName="goods_order" domainObjectName="GoodsOrderModel" mapperName="GoodsOrderMapper"/>-->
+        <!--<table tableName="news" domainObjectName="NewsModel" mapperName="NewsMapper"/>-->
             <!-- schema即为数据库名 tableName为对应的数据库表 为“%”时，生成所有的表 domainObjectName是要生成的实体类 enable*ByExample
             是否生成 example类 -->
 

@@ -10,6 +10,8 @@ drop table if exists contact;
 
 drop table if exists enterprise_video;
 
+drop table if exists goods_kind;
+
 drop table if exists goods;
 
 drop table if exists news;
@@ -25,9 +27,9 @@ create table admin
   username             varchar(20),
   password             varchar(50),
   website              varchar(100),
-  create_time          varchar(20),
-  last_update          varchar(20),
-  expiry_time          varchar(20),
+  create_time          date,
+  last_update          date,
+  expiry_time          date,
   primary key (admin_id)
 );
 
@@ -63,18 +65,31 @@ create table enterprise_video
 );
 
 /*==============================================================*/
+/* Table: goods_kinds                                                 */
+/*==============================================================*/
+create table goods_kind
+(
+  goods_kind_id            int not NULL auto_increment,
+  goods_kind_name          varchar(100),
+  goods_kind_flag          char(1),      /*0水果、1 树苗*/
+  admin_id                 int,
+  PRIMARY KEY (goods_kind_id)
+);
+
+/*==============================================================*/
 /* Table: goods                                                 */
 /*==============================================================*/
 create table goods
 (
   goods_id             int not NULL auto_increment,
-  goods_kind           varchar(100),
   goods_type           varchar(20),
+  images               VARCHAR (100),
   price                int(10),
   stock_amount         int,
   create_time          date,
   last_update          date,
-  admin_id           int,
+  goods_kind_id        int,
+  admin_id             int,
   PRIMARY KEY (goods_id)
 );
 

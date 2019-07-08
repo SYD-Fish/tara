@@ -43,4 +43,13 @@ public interface AdminMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(AdminModel record);
+
+    /**
+     * 通过admin动态查询
+     * @param adminModel
+     * @return adminModel
+     */
+    AdminModel selectByAdmin(AdminModel adminModel);
+
+    Integer getAdminId(String website);
 }

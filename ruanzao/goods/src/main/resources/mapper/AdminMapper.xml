@@ -10,9 +10,9 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="website" jdbcType="VARCHAR" property="website" />
-    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
-    <result column="last_update" jdbcType="VARCHAR" property="lastUpdate" />
-    <result column="expiry_time" jdbcType="VARCHAR" property="expiryTime" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="last_update" jdbcType="DATE" property="lastUpdate" />
+    <result column="expiry_time" jdbcType="DATE" property="expiryTime" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
@@ -31,8 +31,8 @@
       website, create_time, last_update, 
       expiry_time)
     values (#{adminId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{website,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{lastUpdate,jdbcType=VARCHAR}, 
-      #{expiryTime,jdbcType=VARCHAR})
+      #{website,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{lastUpdate,jdbcType=DATE}, 
+      #{expiryTime,jdbcType=DATE})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.syd.goods.model.AdminModel">
     <!--
@@ -43,9 +43,9 @@
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       website = #{website,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=VARCHAR},
-      last_update = #{lastUpdate,jdbcType=VARCHAR},
-      expiry_time = #{expiryTime,jdbcType=VARCHAR}
+      create_time = #{createTime,jdbcType=DATE},
+      last_update = #{lastUpdate,jdbcType=DATE},
+      expiry_time = #{expiryTime,jdbcType=DATE}
     where admin_id = #{adminId,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -64,5 +64,19 @@
     -->
     select admin_id, username, password, website, create_time, last_update, expiry_time
     from admin
+  </select>
+  <select id="selectByAdmin" resultMap="BaseResultMap">
+    select admin_id, username, password, website, create_time, last_update, expiry_time
+    from admin
+    where 1=1
+    <if test="username != null">and username = #{username,jdbcType=VARCHAR}</if>
+    <if test="password != null">and password = #{password,jdbcType=VARCHAR}</if>
+    <if test="website != null">and website = #{website,jdbcType=VARCHAR}</if>
+    <if test="createTime != null">and create_time = #{createTime,jdbcType=DATE}</if>
+    <if test="lastUpdate != null">and last_update = #{lastUpdate,jdbcType=DATE}</if>
+    <if test="expiryTime != null">and expiry_time = #{expiryTime,jdbcType=DATE}</if>
+  </select>
+  <select id="getAdminId" parameterType="java.lang.String" resultType="java.lang.Integer">
+    SELECT admin_id FROM admin WHERE website = #{website,jdbcType=VARCHAR}
   </select>
 </mapper>
