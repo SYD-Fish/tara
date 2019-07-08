@@ -1,0 +1,5 @@
+1、data({
+  return{    //return 必须要有
+  }
+}
+2、

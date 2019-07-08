@@ -68,8 +68,11 @@
 
     export default {
       name: "UserDashboard",
-      data: function(){
-        goodsKinds:[]
+      data(){
+        return {
+          goodsKinds:[]
+        }
+
       },
       created() {
         this.$axios.get(this.rootUrl + '/system/getAdminId/' + window.location.href.split('/')[2])
@@ -90,7 +93,7 @@
       methods: {
         linkToFruit:function (goodsKindId) {
           console.log(goodsKindId + 'aa');
-          // router.push('fruit/'+goodsKindId);
+          this.$router.push('fruit/'+goodsKindId);
         }
       }
     }
