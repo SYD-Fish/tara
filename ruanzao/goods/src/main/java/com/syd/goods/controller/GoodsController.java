@@ -26,11 +26,16 @@ public class GoodsController {
     private GoodsService goodsService;
 
     @GetMapping("/getAllFruitKind/{adminId}")
-    public List<GoodsKindModel> getGoods(@PathVariable("adminId") Integer adminId) {
+    public List<GoodsKindModel> getAllFruitKind(@PathVariable("adminId") Integer adminId){
         System.out.println(adminId);
         GoodsKindModel goodsKindModel = new GoodsKindModel();
         goodsKindModel.setAdminId(adminId);
         goodsKindModel.setGoodsKindFlag("0");
         return goodsService.getGoodsKindList(goodsKindModel);
+    }
+
+    @GetMapping("/getGoods/{goodsKindId}")
+    public List<GoodsModel> getGoods(@PathVariable("goodsKindId") Integer goodsKindId){
+        return goodsService.getGoods(goodsKindId);
     }
 }

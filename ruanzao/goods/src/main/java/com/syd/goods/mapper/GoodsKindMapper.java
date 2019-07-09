@@ -1,6 +1,8 @@
 package com.syd.goods.mapper;
 
 import com.syd.goods.model.GoodsKindModel;
+import com.syd.goods.model.GoodsModel;
+
 import java.util.List;
 
 public interface GoodsKindMapper {
@@ -46,8 +48,9 @@ public interface GoodsKindMapper {
 
     /**
      * 通过goodkings model 来查询集合
+     *
      * @param goodsKindModel
      * @return
      */
-    List<GoodsKindModel> selectBygoodsKindModel(GoodsKindModel goodsKindModel);
+    List<GoodsKindModel> selectByGoodsKindModel(GoodsKindModel goodsKindModel);
 }

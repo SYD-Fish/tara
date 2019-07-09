@@ -1,6 +1,7 @@
 package com.syd.goods.service;
 
 import com.syd.goods.model.GoodsKindModel;
+import com.syd.goods.model.GoodsModel;
 
 import java.util.List;
 
@@ -13,9 +14,16 @@ import java.util.List;
  */
 public interface GoodsService {
     /**
-     * 获取货物的集合
+     * get goods kind by adminId and type
      * @param goodsKindModel
      * @return
      */
     List<GoodsKindModel> getGoodsKindList(GoodsKindModel goodsKindModel);
+
+    /**
+     * get goods by goods kind id
+     * @param goodsKindId
+     * @return
+     */
+    List<GoodsModel> getGoods(Integer goodsKindId);
 }

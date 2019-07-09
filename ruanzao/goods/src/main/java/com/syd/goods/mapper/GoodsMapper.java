@@ -43,4 +43,11 @@ public interface GoodsMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(GoodsModel record);
+
+    /**
+     *
+     * @param goodsKindId
+     * @return
+     */
+    List<GoodsModel> selectByGoodsKindId(Integer goodsKindId);
 }

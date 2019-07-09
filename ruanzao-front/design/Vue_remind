@@ -2,4 +2,6 @@
   return{    //return 必须要有
   }
 }
-2、
+2、Vue img 标签src 动态绑定。
+   1）在data里定义img： require（）
+   2）将图片放在src 的同级目录static 下。

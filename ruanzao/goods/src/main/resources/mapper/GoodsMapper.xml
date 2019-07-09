@@ -73,4 +73,10 @@
     goods_kind_id, admin_id
     from goods
   </select>
+    <select id="selectByGoodsKindId" resultMap="BaseResultMap">
+      select goods_id, goods_type, images, price, stock_amount, create_time, last_update,
+      goods_kind_id, admin_id
+      from goods
+      WHERE goods_kind_id = #{goodsKindId,jdbcType=INTEGER}
+    </select>
 </mapper>

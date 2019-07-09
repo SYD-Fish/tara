@@ -57,7 +57,7 @@
     select goods_kind_id, goods_kind_name, goods_kind_flag, admin_id
     from goods_kind
   </select>
-    <select id="selectBygoodsKindModel" resultMap="BaseResultMap">
+    <select id="selectByGoodsKindModel" resultMap="BaseResultMap">
       select goods_kind_id, goods_kind_name, goods_kind_flag, admin_id
       from goods_kind
       where 1=1

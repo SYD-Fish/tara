@@ -1,1 +1,2 @@
 7/08: complete menu http:getAdminId/getAllFruitKind and v-for for fruit
+7/09: fruit page router/ img src dynamic load/ implement loading fruit data              --target: refresh always /home page; fruit page typesetting

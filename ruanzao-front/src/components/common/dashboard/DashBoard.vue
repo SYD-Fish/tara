@@ -93,7 +93,7 @@
       methods: {
         linkToFruit:function (goodsKindId) {
           console.log(goodsKindId + 'aa');
-          this.$router.push('fruit/'+goodsKindId);
+          this.$router.push({ name: 'fruit', params: { goodKindId: goodsKindId }});
         }
       }
     }

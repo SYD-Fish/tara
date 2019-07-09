@@ -12,8 +12,8 @@ Vue.use(VueRouter)
 const routes = [
   {path: '/', redirect: '/home'},
   {path: '/home', name: 'home', component: Home},
-  {path: '/fruit/:id', component: Fruit},
-  {path: '/sapling', component: Sapling},
+  {path: '/fruit', name: "fruit", component: Fruit},
+  {path: '/sapling', name: "sapling", component: Sapling},
   {path: '/contact', component: Contact},
   {path: '/error', component: ErrorPage}
 ]
